@@ -2,6 +2,8 @@ import Plugin from '@ckeditor/ckeditor5-core/src/plugin'
 
 export default class SpecialConverters extends Plugin {
 	init () {
+		console.log('SpecialConverters init')
+
 		const schema = this.editor.model.schema
 		const conversion = this.editor.conversion
 
@@ -19,22 +21,43 @@ export default class SpecialConverters extends Plugin {
 	// is produced by the editor.getData() method.
 	_handleDivsOptionA (schema, conversion) {
 		// Define special-section block in the schema.
-		schema.register('specialSection', {
-			allowWhere: '$block',
+		schema.register('dnChooseWrapper', {
+			allowWhere: ['$block'],
+			allowContentOf: ['$root', '$block']
+		})
+
+		schema.register('dnChoose', {
+			allowWhere: ['$block'],
+			allowContentOf: ['$root', '$block']
+		})
+
+		schema.register('dnChooseEnd', {
+			allowWhere: ['$block'],
 			allowContentOf: ['$root', '$block']
 		})
 
 		// Add two-way (view-to-model and model-to-view) converter for special-section.
 		conversion.elementToElement({
-			model: 'specialSection',
+			model: 'dnChooseWrapper',
 			view: {
 				name: 'div',
-				classes: 'my-special-section',
-				// If the "data-poc" flag is not needed the whole `attributes` block can be dropped.
-				// After removing it the model-to-view converter will render <div class="my-special-section"></div>
-				attributes: {
-					'data-poc': 'false'
-				}
+				classes: ['dn-choose-wrapper'],
+			}
+		})
+
+		conversion.elementToElement({
+			model: 'dnChoose',
+			view: {
+				name: 'div',
+				classes: ['dn-choose'],
+			}
+		})
+
+		conversion.elementToElement({
+			model: 'dnChooseEnd',
+			view: {
+				name: 'div',
+				classes: ['dn-choose-end'],
 			}
 		})
 	}

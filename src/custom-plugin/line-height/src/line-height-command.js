@@ -51,7 +51,7 @@ export default class LineHeightCommand extends Command {
 	refresh () {
 		const block = first(this.editor.model.document.selection.getSelectedBlocks());
 
-		let flag = block.name !== 'image';
+		let flag = block && block.name !== 'image';
 
 		this.value = (!!block && block.hasAttribute('lineHeight')) ? block.getAttribute('lineHeight') : '4mm';
 		this.isEnabled = !!block && (this.editor.model.schema.checkAttribute(block, 'lineHeight') || flag);
