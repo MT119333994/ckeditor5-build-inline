@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2003-2018, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md.
  */
 
@@ -32,8 +32,8 @@ import List from '@ckeditor/ckeditor5-list/src/list'
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice'
 import Table from '@ckeditor/ckeditor5-table/src/table'
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar'
-import StructureNumber from './custom-plugin/structure-number/src/structure-number'
-import SpecialConverters from './custom/conversion/special-converters'
+// import StructureNumber from './custom-plugin/structure-number/src/structure-number'
+// import SpecialConverters from './custom/conversion/special-converters'
 
 export default class InlineEditor extends InlineEditorBase {}
 
@@ -63,9 +63,9 @@ InlineEditor.builtinPlugins = [
 	// Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar,
-	StructureNumber,
-	SpecialConverters
+	TableToolbar
+	// StructureNumber,
+	// SpecialConverters
 ]
 
 // Editor configuration.
