@@ -34,6 +34,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table'
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar'
 // import StructureNumber from './custom-plugin/structure-number/src/structure-number'
 // import SpecialConverters from './custom/conversion/special-converters'
+// import Placeholder from './custom-plugin/placeholder/placeholder'
 
 export default class InlineEditor extends InlineEditorBase {}
 
@@ -64,6 +65,7 @@ InlineEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar
+	// Placeholder
 	// StructureNumber,
 	// SpecialConverters
 ]
@@ -80,15 +82,15 @@ InlineEditor.defaultConfig = {
 			'underline',
 			'alignment',
 			// 'link',
-			'bulletedList',
-			'numberedList',
+			// 'bulletedList',
+			// 'numberedList',
 			'imageUpload',
 			// 'blockQuote',
 			'insertTable',
 			// 'mediaEmbed',
 			'undo',
-			'redo',
-			'insertImage'
+			'redo'
+			// 'insertImage'
 		]
 	},
 	fontSize: {

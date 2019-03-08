@@ -26,8 +26,10 @@
 <script>
 InlineEditor.create(document.querySelector('#editor'))
 	.then(editor => {
+		// editor.execute( 'placeholder', { value: 'time' } );
+
 		window.editor = editor
-		editor.setData('<div class="dn-choose-wrapper"><div class="dn-choose">[ 43 ]</div><div class="dn-choose">[ 44 ]</div><div class="dn-choose-end">&nbsp;</div></div>')
+		// editor.setData('<div class="dn-choose-wrapper"><div class="dn-choose">[ 43 ]</div><div class="dn-choose">[ 44 ]</div><div class="dn-choose-end">&nbsp;</div></div>')
 	})
 	.catch(err => {
 		console.error(err.stack)

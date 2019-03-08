@@ -14,7 +14,7 @@ const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin')
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-	devtool: 'source-map',
+	devtool: false,
 	performance: { hints: false },
 
 	entry: path.resolve(__dirname, 'src', 'ckeditor.js'),
