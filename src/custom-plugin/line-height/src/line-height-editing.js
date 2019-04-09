@@ -49,7 +49,11 @@ export default class LineHeightEditing extends Plugin {
 	 */
 	init () {
 		const editor = this.editor;
+		const schema = editor.model.schema;
 		const options = editor.config.get('lineHeight.options');
+
+		// Allow alignment attribute on all blocks.
+		schema.extend('$block', {allowAttributes: 'lineHeight'});
 
 		const modelElements = [];
 
@@ -73,6 +77,7 @@ export default class LineHeightEditing extends Plugin {
 		editor.commands.add('lineHeight', new LineHeightCommand(editor, modelElements));
 	}
 }
+
 function _buildDefinition (options) {
 	const definition = {
 		model: {
